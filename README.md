@@ -81,8 +81,8 @@ Here's where to find and modify key elements of the website:
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/razor-bot-website.git
-cd razor-bot-website
+git clone https://github.com/Casper104s/Bot-WebSite.git
+cd Casper104s/Bot-WebSite
 ```
 
 2. Install dependencies
@@ -186,6 +186,7 @@ client.once('ready', () => {
         }
     });
 });
+```
 
 ## Features in Detail 🔍
 
