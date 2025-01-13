@@ -112,7 +112,7 @@ export default function Premium() {
               Join thousands of servers already enjoying premium features
             </p>
             <a 
-              href="https://discord.gg/NEUJAuhk9r"
+              href="https://discord.gg/557azNjSZZ"
               target="_blank"
               rel="noopener noreferrer" 
               className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white font-medium px-8 py-3 rounded-lg transition-all duration-200"
