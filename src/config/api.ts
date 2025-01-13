@@ -1,5 +1,5 @@
 export const API_CONFIG = {
-  BASE_URL: 'https://tec-api.galaxyhub.lol',
+  BASE_URL: 'http://armando.hidencloud.com:25564/',
   ENDPOINTS: {
     BOT_INFO: '/bot-info'
   },
