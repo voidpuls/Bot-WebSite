@@ -14,7 +14,7 @@ export function Footer() {
           
           <div className="flex gap-6 mb-6">
             <a href="https://discord.com/api/oauth2/authorize?client_id=1274880965767991346&permissions=303600576574&scope=bot%20applications.commands" className="text-gray-400 hover:text-white">
-              <Invite className="w-5 h-5" />
+              <github className="w-5 h-5" />
             </a>
             <a href="https://discord.gg/557azNjSZZ" className="text-gray-400 hover:text-white">
               <MessageCircle className="w-5 h-5" />
