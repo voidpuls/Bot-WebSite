@@ -129,10 +129,9 @@ Copy and paste the following code into your bot's main file at line 279 (`index.
 after implementing the api go to the bot directory open a cmd and run the command npm install cors
 
 ```javascript
-const express = require('express');
+
 const cors = require('cors');
-const chalk = require('chalk');
-const dayjs = require('dayjs');
+
 
 
 const app2 = express();
