@@ -105,7 +105,7 @@ export default function TermsOfService() {
                 </p>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Discord Support Server</li>
-                  <li>Email: support@OmniSparkbot.com</li>
+                  <li>Email: voidpulse@hidennetwork.com</li>
                 </ul>
               </div>
             </section>
