@@ -19,7 +19,7 @@ export function Header() {
   const handleNavClick = (item: string) => {
     setIsMobileMenuOpen(false);
     
-    if (item === 'Stats' || item === 'Features') {
+    if (item === 'Stats' || item === 'Features' || item === 'Updates') {
       if (location.pathname !== '/') {
         window.location.href = `/#${item.toLowerCase()}`;
       } else {
@@ -45,8 +45,8 @@ export function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {['Features', 'Stats', 'Commands', 'Premium'].map((item) => (
-              ['Stats', 'Features'].includes(item) ? (
+            {['Features', 'Commands', 'Premium', 'Stats', 'Updates'].map((item) => (
+              ['Stats', 'Features', 'Updates'].includes(item) ? (
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
@@ -96,8 +96,8 @@ export function Header() {
             : 'max-h-0 opacity-0 invisible'
         }`}>
           <nav className="flex flex-col gap-4 py-6">
-            {['Features', 'Commands', 'Premium', 'Stats'].map((item) => (
-              ['Stats', 'Features'].includes(item) ? (
+            {['Features', 'Commands', 'Premium', 'Stats', 'Updates'].map((item) => (
+              ['Stats', 'Features', 'Updates'].includes(item) ? (
                 <button
                   key={item}
                   onClick={() => handleNavClick(item)}
