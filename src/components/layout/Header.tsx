@@ -68,19 +68,6 @@ export function Header() {
                 </Link>
               )
             ))}
-            <a
-              href="#"
-              className="relative inline-flex items-center justify-center px-6 py-2 overflow-hidden font-medium text-white transition-all duration-300 ease-out border-2 border-blue-500 rounded-lg group hover:bg-gradient-to-r hover:from-blue-500 hover:to-blue-600"
-            >
-            
-          </nav>
-
-          <button
-            className="md:hidden text-gray-400 hover:text-white transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
 
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
