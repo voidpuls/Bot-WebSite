@@ -28,7 +28,7 @@ export default function TermsOfService() {
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Important Notice</h3>
                   <p className="text-gray-400">
-                    By using Razor Bot, you agree to these terms. Please read them carefully before adding the bot to your server.
+                    By using OmniSpark Bot, you agree to these terms. Please read them carefully before adding the bot to your server.
                   </p>
                 </div>
               </div>
@@ -39,10 +39,10 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-6">1. Usage Agreement</h2>
               <div className="glass p-6 rounded-lg space-y-4">
                 <p className="text-gray-300">
-                  By inviting Razor Bot to your Discord server, you agree to these terms of service and privacy policy. You acknowledge that you have the authority to accept these terms on behalf of your server.
+                  By inviting OmniSpark Bot to your Discord server, you agree to these terms of service and privacy policy. You acknowledge that you have the authority to accept these terms on behalf of your server.
                 </p>
                 <p className="text-gray-300">
-                  You may not use Razor Bot for any illegal or unauthorized purpose. You must comply with all Discord's Terms of Service and Community Guidelines.
+                  You may not use OmniSpark Bot for any illegal or unauthorized purpose. You must comply with all Discord's Terms of Service and Community Guidelines.
                 </p>
               </div>
             </section>
@@ -51,7 +51,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-6">2. Service Availability</h2>
               <div className="glass p-6 rounded-lg space-y-4">
                 <p className="text-gray-300">
-                  While we strive to provide uninterrupted service, Razor Bot is provided "as is" and we make no guarantees about its availability. We reserve the right to modify, suspend, or discontinue the service at any time without notice.
+                  While we strive to provide uninterrupted service, OmniSpark Bot is provided "as is" and we make no guarantees about its availability. We reserve the right to modify, suspend, or discontinue the service at any time without notice.
                 </p>
               </div>
             </section>
@@ -75,7 +75,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-6">4. Privacy & Data</h2>
               <div className="glass p-6 rounded-lg space-y-4">
                 <p className="text-gray-300">
-                  Razor Bot collects and stores minimal data necessary for functionality. This includes:
+                  OmniSpark Bot collects and stores minimal data necessary for functionality. This includes:
                 </p>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Server IDs for configuration settings</li>
@@ -92,7 +92,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-semibold mb-6">5. Changes to Terms</h2>
               <div className="glass p-6 rounded-lg space-y-4">
                 <p className="text-gray-300">
-                  We reserve the right to modify these terms at any time. Continued use of Razor Bot after changes constitutes acceptance of the new terms.
+                  We reserve the right to modify these terms at any time. Continued use of OmniSpark Bot after changes constitutes acceptance of the new terms.
                 </p>
               </div>
             </section>
@@ -105,7 +105,7 @@ export default function TermsOfService() {
                 </p>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
                   <li>Discord Support Server</li>
-                  <li>Email: support@razorbot.com</li>
+                  <li>Email: support@OmniSparkbot.com</li>
                 </ul>
               </div>
             </section>
