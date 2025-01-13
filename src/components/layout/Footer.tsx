@@ -34,7 +34,7 @@ export function Footer() {
           </div>
           
           <div className="text-center text-sm text-gray-400">
-            <p className="mb-2">© 2025 Razor. All rights reserved.</p>
+            <p className="mb-2">© 2025 OmniSpark. All rights reserved.</p>
             <a 
               href="https://casper.104shop.xyz" 
               target="_blank" 
