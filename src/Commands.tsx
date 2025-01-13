@@ -74,7 +74,7 @@ function Commands() {
                 <Bot className="w-8 h-8 text-blue-500 relative z-10 transform group-hover:rotate-12 transition-transform" />
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Razor Commands
+                OmniSpark Commands
               </span>
             </Link>
           </div>
