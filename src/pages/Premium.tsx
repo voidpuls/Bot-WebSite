@@ -66,7 +66,7 @@ export default function Premium() {
             Premium Features
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Unlock the full potential of Razor with exclusive features and enhanced capabilities
+            Unlock the full potential of OmniSpark with exclusive features and enhanced capabilities
           </p>
         </div>
 
