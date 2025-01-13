@@ -10,8 +10,8 @@
 
 .bg-mesh {
   background-image: radial-gradient(at 40% 40%, rgb(23, 23, 23) 0px, transparent 50%),
-                    radial-gradient(at 90% 10%, rgb(17, 24, 39) 0px, transparent 50%),
-                    radial-gradient(at 50% 95%, rgb(17, 24, 39) 0px, transparent 50%);
+                    radial-gradient(at 90% 10%, rgb(18, 39, 17) 0px, transparent 50%),
+                    radial-gradient(at 50% 95%, rgb(18, 39, 17) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
