@@ -9,7 +9,7 @@ export function Hero() {
         <div className="flex flex-col items-center text-center">
           <Bot className="w-16 h-16 text-blue-500 mb-8" />
           <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-            Meet Razor
+            Meet OmniSpark
           </h1>
           <p className="text-xl text-gray-400 mb-10 max-w-2xl">
             A powerful Discord bot that brings advanced features and seamless automation to your server.
