@@ -9,14 +9,14 @@ export function Footer() {
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2 mb-6">
             <Bot className="w-6 h-6 text-blue-500" />
-            <span className="font-bold">Razor</span>
+            <span className="font-bold">OmniSpark</span>
           </div>
           
           <div className="flex gap-6 mb-6">
-            <a href="https://github.com/Casper104s" className="text-gray-400 hover:text-white">
-              <Github className="w-5 h-5" />
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1274880965767991346&permissions=303600576574&scope=bot%20applications.commands" className="text-gray-400 hover:text-white">
+              <Invite className="w-5 h-5" />
             </a>
-            <a href="https://discord.gg/NEUJAuhk9r" className="text-gray-400 hover:text-white">
+            <a href="https://discord.gg/557azNjSZZ" className="text-gray-400 hover:text-white">
               <MessageCircle className="w-5 h-5" />
             </a>
           </div>
@@ -36,12 +36,12 @@ export function Footer() {
           <div className="text-center text-sm text-gray-400">
             <p className="mb-2">© 2025 OmniSpark. All rights reserved.</p>
             <a 
-              href="https://casper.104shop.xyz" 
+              href="https://omnispark.slimecrew.org/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-blue-500 hover:text-blue-400 transition-colors"
             >
-              Made by Casper
+              Made by slimecrew
             </a>
           </div>
         </div>
