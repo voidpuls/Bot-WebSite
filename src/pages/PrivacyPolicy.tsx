@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
                   For privacy-related questions or concerns, you can reach us through:
                 </p>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>Email: privacy@razorbot.com</li>
+                  <li>Email: voidpulse@hidennetwork.com</li>
                   <li>Discord Support Server</li>
                 </ul>
               </div>
