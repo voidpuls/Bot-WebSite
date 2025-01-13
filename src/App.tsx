@@ -5,6 +5,7 @@ import { Header } from './components/layout/Header';
 import { Hero } from './components/home/Hero';
 import { Features } from './components/home/Features';
 import { Stats } from './components/home/Stats';
+import { Updates } from './components/home/Updates';
 import { Footer } from './components/layout/Footer';
 
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
         <Hero />
         <Features />
         <Stats stats={stats} />
+        <Updates />
       </main>
       <Footer />
     </div>
