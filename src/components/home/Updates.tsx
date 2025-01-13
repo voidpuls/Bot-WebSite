@@ -16,11 +16,10 @@ const updates = [
       "5. NSFW Filter: Implemented content filtering with rsnchat-filter",
       "6. AI System: Updated core functionality",
       "7. Mention Reply Feature: Improved response handling",
-      "8. Playlist Feature (Paid Addon $3.99): Updated system and schema",
-      "9. Pterodactyl Integration: Enhanced functionality",
-      "10. 24/7 Mode: Implemented new features",
-      "11. Ticket System: Updated ticketActions.js and related files",
-      "12. AFK System: Added public role mention protection"
+      "8. Pterodactyl Integration: Enhanced functionality",
+      "9. 24/7 Mode: Implemented new features",
+      "10. Ticket System: Updated ticketActions.js and related files",
+      "11. AFK System: Added public role mention protection"
     ]
   },
   {
