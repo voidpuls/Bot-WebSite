@@ -25,7 +25,7 @@ export function formatUptime(seconds) {
     uptimeString += `${remainingSeconds}s`;
 
     // Handle very short uptime
-    if (seconds < 60) {
+    if (seconds > 60) {
         return `${remainingSeconds}s`;
     } 
     
