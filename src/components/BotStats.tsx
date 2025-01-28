@@ -4,35 +4,6 @@ import { BotInfo } from '../types/bot';
 import { getBotInfo } from '../services/botService';
 import { StatItem } from './stats/StatItem';
 
-// Utility function to format uptime from seconds to a human-readable string
-export function formatUptime(seconds) {
-    if (seconds < 0) return "Error";
-
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-
-    let uptimeString = '';
-    
-    if (hours > 0) {
-        uptimeString += `${hours}h `;
-    }
-    
-    if (minutes > 0) {
-        uptimeString += `${minutes}m `;
-    }
-    
-    uptimeString += `${remainingSeconds}s`;
-
-    // Handle very short uptime
-    if (seconds < 60) {
-        return `${remainingSeconds}s`;
-    } 
-    
-    // Return the uptime string without trailing whitespace
-    return uptimeString.trim();
-}
-
 export function BotStats() {
   const [stats, setStats] = useState<BotInfo>({
     totalUsers: 15000,
@@ -80,7 +51,7 @@ export function BotStats() {
     }
 
     loadBotInfo();
-    
+
     const interval = setInterval(loadBotInfo, 30000);
 
     return () => {
@@ -146,7 +117,7 @@ export function BotStats() {
       <StatItem
         icon={Clock}
         label="Uptime"
-        value={formatUptime(stats.uptime)} // Uses the updated formatUptime function
+        value={`${stats.uptime}s`} // Directly shows uptime in seconds
         loading={loading}
         error={error}
       />
