@@ -15,7 +15,7 @@ export function Hero() {
             A powerful Discord bot that brings advanced features and seamless automation to your server.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#" className="btn-primary">
+            <a href="https://discord.com/api/oauth2/authorize?client_id=1274880965767991346&permissions=303600576574&scope=bot%20applications.commands" className="btn-primary">
               Add to Discord
             </a>
             <Link to="/commands" className="btn-secondary">
