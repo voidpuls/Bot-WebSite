@@ -4,7 +4,7 @@ import { BotInfo } from '../types/bot';
 import { getBotInfo } from '../services/botService';
 import { StatItem } from './stats/StatItem';
 
-// Utility function to format uptime from seconds to a human-readable string
+// Utility function to format uptime
 export function formatUptime(seconds) {
     if (seconds < 0) return "Error";
 
@@ -24,13 +24,7 @@ export function formatUptime(seconds) {
     
     uptimeString += `${remainingSeconds}s`;
 
-    // Handle very short uptime
-    if (seconds > 60) {
-        return `${remainingSeconds}s`;
-    } 
-    
-    // Return the uptime string without trailing whitespace
-    return uptimeString.trim();
+    return uptimeString.trim(); // Return the formatted uptime string
 }
 
 export function BotStats() {
@@ -51,43 +45,30 @@ export function BotStats() {
         let mounted = true;
 
         async function loadBotInfo() {
-            console.log('Loading bot info...'); // Log before fetching data
-
             try {
                 setError(false);
                 const info = await getBotInfo();
-                console.log('Fetched bot info:', info); // Log the fetched info
 
                 if (mounted) {
+                    const uptimeInSeconds = convertUptimeToSeconds(info.uptime);  // Parse uptime
                     setStats({
                         totalUsers: info.totalUsers,
                         totalServers: info.totalServers,
                         ping: info.ping,
                         command: info.command,
                         channels: info.channels,
-                        nodeVersion: info.nodeVersion, // Adjust to match API response
-                        uptime: convertUptimeToSeconds(info.uptime) // Convert uptime from string to seconds
-                    });
-                    console.log('Updated bot stats:', {
-                        totalUsers: info.totalUsers,
-                        totalServers: info.totalServers,
-                        ping: info.ping,
-                        command: info.command,
-                        channels: info.channels,
                         nodeVersion: info.nodeVersion,
-                        uptime: convertUptimeToSeconds(info.uptime)
-                    }); // Log updated stats here
+                        uptime: uptimeInSeconds // Store uptime in seconds
+                    });
                 }
             } catch (err) {
                 if (mounted) {
                     setError(true);
-                    console.warn('Error fetching bot info:', err);
-                    console.log('Error state updated:', error); // Log the error state
+                    console.error('Error fetching bot info:', err);
                 }
             } finally {
                 if (mounted) {
                     setLoading(false);
-                    console.log('Finished loading bot info, loading state:', loading); // Log loading state
                 }
             }
         }
