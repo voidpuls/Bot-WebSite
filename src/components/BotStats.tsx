@@ -3,19 +3,47 @@ import { Users, Server, Signal, Terminal, Layout, Code, Clock } from 'lucide-rea
 import { BotInfo } from '../types/bot';
 import { getBotInfo } from '../services/botService';
 import { StatItem } from './stats/StatItem';
-import { formatUptime } from '../utils/time';
+
+// Utility function to format uptime from seconds to a human-readable string
+export function formatUptime(seconds) {
+    if (seconds < 0) return "Error";
+
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    let uptimeString = '';
+    
+    if (hours > 0) {
+        uptimeString += `${hours}h `;
+    }
+    
+    if (minutes > 0) {
+        uptimeString += `${minutes}m `;
+    }
+    
+    uptimeString += `${remainingSeconds}s`;
+
+    // Handle very short uptime
+    if (seconds < 60) {
+        return `${remainingSeconds}s`;
+    } 
+    
+    // Return the uptime string without trailing whitespace
+    return uptimeString.trim();
+}
 
 export function BotStats() {
   const [stats, setStats] = useState<BotInfo>({
-    totalUsers: 15000, 
-    totalServers: 500, 
-    ping: 0, 
-    command: 0, 
+    totalUsers: 15000,
+    totalServers: 500,
+    ping: 0,
+    command: 0,
     channels: 0,
     nodeVersion: 'v18.20.5',
     uptime: 0 // Store uptime in seconds
   });
-  
+
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
@@ -26,17 +54,17 @@ export function BotStats() {
       try {
         setError(false);
         const info = await getBotInfo();
-        
+
         if (mounted) {
-          // Map API response to the state
+          // Map API response to state
           setStats({
             totalUsers: info.totalUsers,
             totalServers: info.totalServers,
             ping: info.ping,
             command: info.command,
             channels: info.channels,
-            nodeVersion: info.versnode, // Adjusting to match API response
-            uptime: convertUptimeToSeconds(info.uptime) // Convert uptime from string
+            nodeVersion: info.versnode, // Adjust to match API response
+            uptime: convertUptimeToSeconds(info.uptime) // Convert uptime from string to seconds
           });
         }
       } catch (err) {
@@ -118,7 +146,7 @@ export function BotStats() {
       <StatItem
         icon={Clock}
         label="Uptime"
-        value={formatUptime(stats.uptime)} // Now uses the converted uptime in seconds
+        value={formatUptime(stats.uptime)} // Uses the updated formatUptime function
         loading={loading}
         error={error}
       />
