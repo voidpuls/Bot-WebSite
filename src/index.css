@@ -84,19 +84,19 @@
 }
 
 h1, h2, h3 {
-  @apply text-yellow-300 mb-4 text-shadow; 
+  @apply text-yellow-300 mb-4; /* Using yellow for headings */
 }
 
 p {
-  @apply text-gray-200;
+  @apply text-gray-200; /* Softer text color for better contrast */
 }
 
 .card-title {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold; /* Making titles more prominent */
 }
 
 .card-description {
-  @apply text-sm my-2; 
+  @apply text-sm my-2; /* Spacing around description */
 }
 
 .loading-spinner {
@@ -104,11 +104,11 @@ p {
 }
 
 .border-pip {
-  @apply border border-blue-400/60; 
+  @apply border border-blue-400/60; /* Adding a bordered style resembling the Pip-Boy frame */
 }
 
 .pip-card {
-  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; 
+  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific cards for a Pip-Boy feel */
 }
 
 .terminal-main {
