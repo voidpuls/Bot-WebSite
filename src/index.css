@@ -4,34 +4,61 @@
 
 @layer base {
   body {
-    @apply bg-[#2E3A4D]; /* Dark background resembling the Pip-Boy screen */
-    font-family: 'Courier New', Courier, monospace; /* Retro game style */
-    color: #E0E0E0; /* Soft white text for better readability */
+    @apply bg-[#1B2A34] text-[#A8CE78]; /* Dark background and green text */
+    font-family: 'Courier New', Courier, monospace; /* Terminal style font */
   }
 }
 
 .bg-mesh {
-  background-image: radial-gradient(at 40% 40%, rgba(23, 23, 23, 0.5) 0px, transparent 50%),
-                    radial-gradient(at 90% 10%, rgba(18, 39, 17, 0.5) 0px, transparent 50%),
-                    radial-gradient(at 50% 95%, rgba(18, 39, 17, 0.5) 0px, transparent 50%);
-  background-attachment: fixed;
+  background: url('your-background-image-path.jpg') no-repeat center center fixed; /* Add a cool nuclear texture as a background image */
+  background-size: cover;
+  position: relative;
 }
 
 .glass {
-  @apply bg-[#1D2532]/80 backdrop-blur-md border border-blue-300/40 shadow-lg transition-all duration-300; /* Adjusted for Pip-Boy aesthetic */
+  @apply bg-[#2D3E49]/70 backdrop-blur-md border border-green-500 shadow-lg transition-all duration-300; /* Green glass border */
 }
 
+.highlight-command {
+  animation: highlight 2s ease-out forwards; /* Highlight animation for commands */
+}
+
+@keyframes highlight {
+  0% { background-color: rgba(168, 206, 120, 0.3); }
+  100% { background-color: transparent; }
+}
+
+input::placeholder {
+  @apply text-green-300; /* Placeholder color */
+}
+
+/* Button Styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-500 to-blue-600 
-         hover:from-blue-600 hover:to-blue-700 
-         text-yellow-300 font-bold px-6 py-3 rounded-lg transition-all duration-200 
-         hover:shadow-2xl hover:shadow-blue-500/50; /* Bright colors for buttons */
-  animation: pulse 2s infinite; /* Pulsing effect for emphasis */
+  @apply bg-gradient-to-r from-green-500 to-green-600 
+         hover:from-green-600 hover:to-green-700 
+         text-black font-bold px-6 py-3 rounded-lg transition-all duration-200 
+         hover:shadow-2xl hover:shadow-green-500/50; /* Bright button colors */
 }
 
-.btn-secondary {
-  @apply bg-[#2C3E50] hover:bg-[#34495E] backdrop-blur-sm border border-blue-300/60
-         text-yellow-300 font-bold px-6 py-3 rounded-lg transition-all duration-200; /* Pip-Boy style colors */
+.button:hover {
+  @apply bg-green-500/10;
+}
+
+/* Card Styles */
+.card-title {
+  font-size: 1.25rem; /* Card title font size */
+}
+
+.card-description {
+  font-size: 0.875rem; /* Card description font size */
+}
+
+.pip-card {
+  @apply glass p-4 my-4 rounded-lg border border-green-400/60 transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific Pip-Boy cards */
+}
+
+.loading-spinner {
+  @apply animate-spin h-8 w-8 text-yellow-500; /* Loading spinner styling */
 }
 
 /* Terminal-style animations */
@@ -41,76 +68,14 @@
   100% { transform: translateY(0); }
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); } 
-  70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-}
-
-@keyframes highlight {
-  0% { background-color: rgba(225, 205, 66, 0.2); } 
-  100% { background-color: transparent; }
-}
-
-.highlight-command {
-  animation: highlight 2s ease-out forwards;
-}
-
-.feature-card {
-  @apply glass p-6 rounded-lg transition-all duration-500 hover:scale-105 hover:bg-[#1D2532]/90 shadow-md;
-  animation: float 5s ease-in-out infinite;
-}
-
-.feature-card:hover .feature-icon {
-  @apply text-yellow-400;
-  transform: scale(1.1) rotate(10deg);
-}
-
-.feature-icon {
-  @apply transition-all duration-300 ease-in-out;
-}
-
-.stat-card {
-  @apply glass p-8 rounded-lg transition-all duration-500 shadow-lg;
-  animation: float 5s ease-in-out infinite;
-}
-
-.stat-card:hover {
-  @apply transform -translate-y-2 shadow-xl;
-}
-
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600;
+.float {
+  animation: float 5s ease-in-out infinite; /* Float animation */
 }
 
 h1, h2, h3 {
-  @apply text-yellow-300 mb-4; /* Using yellow for headings */
+  @apply text-yellow-300 mb-4; /* Yellow headings */
 }
 
 p {
-  @apply text-gray-200; /* Softer text color for better contrast */
-}
-
-.card-title {
-  @apply text-2xl font-bold; /* Making titles more prominent */
-}
-
-.card-description {
-  @apply text-sm my-2; /* Spacing around description */
-}
-
-.loading-spinner {
-  @apply animate-spin h-8 w-8 text-yellow-500; /* Yellow color for loading spinner */
-}
-
-.border-pip {
-  @apply border border-blue-400/60; /* Adding a bordered style resembling the Pip-Boy frame */
-}
-
-.pip-card {
-  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific cards for a Pip-Boy feel */
-}
-
-.terminal-main {
-  @apply p-6; /* Adding padding to the main area for better layout */
+  @apply text-gray-200; /* Soft p color */
 }
