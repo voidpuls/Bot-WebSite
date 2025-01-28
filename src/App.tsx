@@ -26,6 +26,7 @@ export default function App() {
     };
 
     fetchStats();
+
     const interval = setInterval(fetchStats, 30000);
 
     return () => {
