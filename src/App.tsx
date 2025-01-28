@@ -7,6 +7,7 @@ import { Features } from './components/home/Features';
 import { Stats } from './components/home/Stats';
 import { Updates } from './components/home/Updates';
 import { Footer } from './components/layout/Footer';
+import { Commands } from './components/Commands'; // Importing the Commands component
 
 export default function App() {
   const [stats, setStats] = useState<BotInfo | null>(null);
@@ -43,6 +44,7 @@ export default function App() {
         <Features />
         <Stats stats={stats} />
         <Updates />
+        <Commands /> {/* Adding the Commands component */}
       </main>
       <Footer />
     </div>
