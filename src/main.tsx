@@ -1,48 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { BotInfo } from './types/bot';
-import { getBotInfo } from './services/botService';
-import { Header } from './components/layout/Header';
-import { Hero } from './components/home/Hero';
-import { Features } from './components/home/Features';
-import { Stats } from './components/home/Stats';
-import { Updates } from './components/home/Updates';
-import { Footer } from './components/layout/Footer';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import App from './App.tsx';
+import Commands from './Commands.tsx';
+import Premium from './pages/Premium.tsx';
+import TermsOfService from './pages/TermsOfService.tsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
+import './index.css';
 
-export default function App() {
-  const [stats, setStats] = useState<BotInfo | null>(null);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/commands",
+    element: <Commands />
+  },
+  {
+    path: "/premium",
+    element: <Premium />
+  },
+  {
+    path: "/terms",
+    element: <TermsOfService />
+  },
+  {
+    path: "/privacy",
+    element: <PrivacyPolicy />
+  }
+]);
 
-  useEffect(() => {
-    let mounted = true;
-
-    const fetchStats = async () => {
-      try {
-        const botInfo = await getBotInfo();
-        if (mounted) {
-          setStats(botInfo);
-        }
-      } catch (error) {
-        console.error('Failed to fetch bot info:', error);
-      }
-    };
-
-    fetchStats();
-    const interval = setInterval(fetchStats, 30000);
-
-    return () => {
-      mounted = false;
-      clearInterval(interval);
-    };
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-mesh text-white">
-      <Header />
-      <main className="terminal-main">
-        <Hero />
-        <Features />
-        <Stats stats={stats} />
-        <Updates />
-      </main>
-      <Footer />
-    </div>
-  );
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
+);
