@@ -6,6 +6,7 @@
   body {
     @apply bg-[#2E3A4D]; /* Dark background resembling the Pip-Boy screen */
     font-family: 'Courier New', Courier, monospace; /* Retro game style */
+    color: #E0E0E0; /* Soft white text for better readability */
   }
 }
 
@@ -33,6 +34,7 @@
          text-yellow-300 font-bold px-6 py-3 rounded-lg transition-all duration-200; /* Pip-Boy style colors */
 }
 
+/* Terminal-style animations */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
@@ -40,13 +42,13 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); } /* Gold-ish color for the glow */
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); } 
   70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
   100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
 }
 
 @keyframes highlight {
-  0% { background-color: rgba(225, 205, 66, 0.2); } /* Maintaining the yellow highlight */
+  0% { background-color: rgba(225, 205, 66, 0.2); } 
   100% { background-color: transparent; }
 }
 
@@ -78,37 +80,37 @@
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600; /* Gradient text for something like 'Pip-Boy' */
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600;
 }
 
-/* Adjust styling for elements to fit the Pip-Boy aesthetic */
 h1, h2, h3 {
-  @apply text-yellow-300 mb-4; /* Using yellow for headings */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Better readability with shadows */
+  @apply text-yellow-300 mb-4 text-shadow; 
 }
 
 p {
-  @apply text-gray-200; /* Softer text color for better contrast */
+  @apply text-gray-200;
 }
 
 .card-title {
-  @apply text-2xl font-bold; /* Making titles more prominent */
+  @apply text-2xl font-bold;
 }
 
 .card-description {
-  @apply text-sm my-2; /* Spacing around description */
+  @apply text-sm my-2; 
 }
 
-/* Loading Spinner Styled as a Pip-Boy loading animation */
 .loading-spinner {
   @apply animate-spin h-8 w-8 text-yellow-500; /* Yellow color for loading spinner */
 }
 
 .border-pip {
-  @apply border border-blue-400/60; /* Adding a bordered style resembling the Pip-Boy frame */
+  @apply border border-blue-400/60; 
 }
 
-/* Card or Container for Pip-Boy Elements */
 .pip-card {
-  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific cards for a Pip-Boy feel */
+  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; 
+}
+
+.terminal-main {
+  @apply p-6; /* Adding padding to the main area for better layout */
 }
