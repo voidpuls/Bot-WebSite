@@ -4,68 +4,68 @@
 
 @layer base {
   body {
-    @apply bg-[#0A0A0A];
-    font-family: 'Courier New', Courier, monospace; /* Adding a retro game-style font */
+    @apply bg-[#2E3A4D]; /* Dark background resembling the Pip-Boy screen */
+    font-family: 'Courier New', Courier, monospace; /* Retro game style */
   }
 }
 
 .bg-mesh {
-  background-image: radial-gradient(at 40% 40%, rgb(23, 23, 23) 0px, transparent 50%),
-                    radial-gradient(at 90% 10%, rgb(18, 39, 17) 0px, transparent 50%),
-                    radial-gradient(at 50% 95%, rgb(18, 39, 17) 0px, transparent 50%);
+  background-image: radial-gradient(at 40% 40%, rgba(23, 23, 23, 0.5) 0px, transparent 50%),
+                    radial-gradient(at 90% 10%, rgba(18, 39, 17, 0.5) 0px, transparent 50%),
+                    radial-gradient(at 50% 95%, rgba(18, 39, 17, 0.5) 0px, transparent 50%);
   background-attachment: fixed;
 }
 
 .glass {
-  @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg transition-all duration-300;
+  @apply bg-[#1D2532]/80 backdrop-blur-md border border-blue-300/40 shadow-lg transition-all duration-300; /* Adjusted for Pip-Boy aesthetic */
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-indigo-600 
-         hover:from-blue-700 hover:to-indigo-700 
-         text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 
-         hover:shadow-2xl hover:shadow-blue-500/30; /* More pronounced shadow for hover */
-  animation: pulse 3s infinite; /* Adding pulse effect to the button */
+  @apply bg-gradient-to-r from-blue-500 to-blue-600 
+         hover:from-blue-600 hover:to-blue-700 
+         text-yellow-300 font-bold px-6 py-3 rounded-lg transition-all duration-200 
+         hover:shadow-2xl hover:shadow-blue-500/50; /* Bright colors for buttons */
+  animation: pulse 2s infinite; /* Pulsing effect for emphasis */
 }
 
 .btn-secondary {
-  @apply bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20
-         text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  @apply bg-[#2C3E50] hover:bg-[#34495E] backdrop-blur-sm border border-blue-300/60
+         text-yellow-300 font-bold px-6 py-3 rounded-lg transition-all duration-200; /* Pip-Boy style colors */
 }
 
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); } /* Reduced float height */
+  50% { transform: translateY(-5px); }
   100% { transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.2); }
-  70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5); } /* Gold-ish color for the glow */
+  70% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
 }
 
 @keyframes highlight {
-  0% { background-color: rgba(59, 130, 246, 0.3); }
+  0% { background-color: rgba(225, 205, 66, 0.2); } /* Maintaining the yellow highlight */
   100% { background-color: transparent; }
 }
 
 .highlight-command {
-  animation: highlight 2s ease-out forwards; /* Added 'forwards' to persist style */
+  animation: highlight 2s ease-out forwards;
 }
 
 .feature-card {
-  @apply glass p-6 rounded-lg transition-all duration-500 hover:scale-105 hover:bg-white/15 shadow-md;
-  animation: float 5s ease-in-out infinite; /* Slightly increased speed for prominence */
+  @apply glass p-6 rounded-lg transition-all duration-500 hover:scale-105 hover:bg-[#1D2532]/90 shadow-md;
+  animation: float 5s ease-in-out infinite;
 }
 
 .feature-card:hover .feature-icon {
-  @apply text-blue-400;
-  transform: scale(1.1) rotate(10deg); /* Enhanced rotation for hover effect */
+  @apply text-yellow-400;
+  transform: scale(1.1) rotate(10deg);
 }
 
 .feature-icon {
-  @apply transition-all duration-300 ease-in-out; /* Added ease for smooth transition */
+  @apply transition-all duration-300 ease-in-out;
 }
 
 .stat-card {
@@ -74,32 +74,41 @@
 }
 
 .stat-card:hover {
-  @apply transform -translate-y-2 shadow-xl; /* Added shadow on hover */
+  @apply transform -translate-y-2 shadow-xl;
 }
 
 .text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600; /* Gradient text */
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-600; /* Gradient text for something like 'Pip-Boy' */
 }
 
-/* Additional styles for specific elements to enhance theme */
+/* Adjust styling for elements to fit the Pip-Boy aesthetic */
 h1, h2, h3 {
-  @apply text-white mb-4; /* Uniform heading style */
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+  @apply text-yellow-300 mb-4; /* Using yellow for headings */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Better readability with shadows */
 }
 
 p {
-  @apply text-gray-300; /* Softer text color for better contrast */
+  @apply text-gray-200; /* Softer text color for better contrast */
 }
 
 .card-title {
-  @apply text-xl font-bold; /* Bold title for emphasis */
+  @apply text-2xl font-bold; /* Making titles more prominent */
 }
 
 .card-description {
   @apply text-sm my-2; /* Spacing around description */
 }
 
-/* Making loading indicators larger and more pronounced */
+/* Loading Spinner Styled as a Pip-Boy loading animation */
 .loading-spinner {
-  @apply animate-spin h-10 w-10 text-blue-500; /* Added size to the loading spinner */
+  @apply animate-spin h-8 w-8 text-yellow-500; /* Yellow color for loading spinner */
+}
+
+.border-pip {
+  @apply border border-blue-400/60; /* Adding a bordered style resembling the Pip-Boy frame */
+}
+
+/* Card or Container for Pip-Boy Elements */
+.pip-card {
+  @apply glass p-4 my-4 rounded-lg border-pip transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific cards for a Pip-Boy feel */
 }
