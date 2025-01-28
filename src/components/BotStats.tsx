@@ -4,7 +4,7 @@ import { BotInfo } from '../types/bot';
 import { getBotInfo } from '../services/botService';
 import { StatItem } from './stats/StatItem';
 
-// Utility function to format uptime
+// Utility function to format uptime from seconds to a human-readable string
 export function formatUptime(seconds) {
     if (seconds < 0) return "Error";
 
@@ -24,13 +24,13 @@ export function formatUptime(seconds) {
     
     uptimeString += `${remainingSeconds}s`;
 
-    return uptimeString.trim(); // Return the formatted uptime string
+    return uptimeString.trim();
 }
 
 export function BotStats() {
     const [stats, setStats] = useState<BotInfo>({
-        totalUsers: 15000,
-        totalServers: 500,
+        totalUsers: 0,
+        totalServers: 0,
         ping: 0,
         command: 0,
         channels: 0,
@@ -49,16 +49,30 @@ export function BotStats() {
                 setError(false);
                 const info = await getBotInfo();
 
+                // Log the fetched info for debugging
+                console.log('Fetched bot info:', info);
+
                 if (mounted) {
-                    const uptimeInSeconds = convertUptimeToSeconds(info.uptime);  // Parse uptime
+                    const uptimeInSeconds = convertUptimeToSeconds(info.uptime); // Convert uptime string to seconds
                     setStats({
                         totalUsers: info.totalUsers,
                         totalServers: info.totalServers,
                         ping: info.ping,
                         command: info.command,
                         channels: info.channels,
-                        nodeVersion: info.nodeVersion,
-                        uptime: uptimeInSeconds // Store uptime in seconds
+                        nodeVersion: info.versnode, // Use the correct field name
+                        uptime: uptimeInSeconds
+                    });
+
+                    // Log the updated stats
+                    console.log('Updated bot stats:', {
+                        totalUsers: info.totalUsers,
+                        totalServers: info.totalServers,
+                        ping: info.ping,
+                        command: info.command,
+                        channels: info.channels,
+                        nodeVersion: info.versnode,
+                        uptime: uptimeInSeconds,
                     });
                 }
             } catch (err) {
@@ -85,6 +99,12 @@ export function BotStats() {
 
     // Function to convert uptime string to seconds
     const convertUptimeToSeconds = (uptimeString: string): number => {
+        // Check if the uptimeString is valid
+        if (!uptimeString || typeof uptimeString !== "string") {
+            console.warn('Invalid uptime string:', uptimeString);
+            return 0; // Return 0 or handle accordingly if the format is unexpected
+        }
+
         const timeParts = uptimeString.split(' ').reduce((acc, timePart) => {
             const value = parseInt(timePart);
             if (timePart.includes('h')) {
@@ -97,8 +117,8 @@ export function BotStats() {
             return acc;
         }, 0);
 
-        console.log('Converted uptime string:', uptimeString, 'to seconds:', timeParts); // Log conversion
-        return timeParts;
+        console.log('Converted uptime string:', uptimeString, 'to seconds:', timeParts);
+        return timeParts; // Return total seconds
     };
 
     return (
@@ -141,7 +161,7 @@ export function BotStats() {
             <StatItem
                 icon={Clock}
                 label="Uptime"
-                value={formatUptime(stats.uptime)} // Uses the updated formatUptime function
+                value={formatUptime(stats.uptime)} // Use the formatted uptime
                 loading={loading}
                 error={error}
             />
