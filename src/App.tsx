@@ -26,7 +26,6 @@ export default function App() {
     };
 
     fetchStats();
-
     const interval = setInterval(fetchStats, 30000);
 
     return () => {
@@ -38,7 +37,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-mesh text-white">
       <Header />
-      <main>
+      <main className="terminal-main">
         <Hero />
         <Features />
         <Stats stats={stats} />
