@@ -14,7 +14,21 @@ export function BotStats() {
         nodeVersion: 'v18.20.5',
         uptime: 0 // Store uptime in seconds
     });
+ /**
+ * Converts an uptime string (e.g., "0h 43m 57s") to milliseconds.
+ */
+function parseUptime(uptimeString: string): number {
+  const hoursMatch = uptimeString.match(/(\d+)h/);
+  const minutesMatch = uptimeString.match(/(\d+)m/);
+  const secondsMatch = uptimeString.match(/(\d+)s/);
 
+  const hours = hoursMatch ? parseInt(hoursMatch[1], 10) : 0;
+  const minutes = minutesMatch ? parseInt(minutesMatch[1], 10) : 0;
+  const seconds = secondsMatch ? parseInt(secondsMatch[1], 10) : 0;
+
+  // Convert everything to milliseconds
+  return (hours * 60 * 60 + minutes * 60 + seconds) * 1000;
+}
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
 
