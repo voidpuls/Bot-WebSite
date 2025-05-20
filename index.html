@@ -19,14 +19,14 @@
     <meta property="og:title" content="Slimeguard - The All-in-One Discord Bot" />
     <meta property="og:description" content="Manage, entertain, and grow your Discord community with Slimeguard's powerful features." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourwebsite.com" />
-    <meta property="og:image" content="https://yourwebsite.com/path-to-image.png" />
+    <meta property="og:url" content="slimeguard.slimecrew.org" />
+    <meta property="og:image" content="https://images-ext-1.discordapp.net/external/xQUti7JsJEGgjx6FY0pzhazDE4GgOa3Xz_CAU1OSxHg/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1323513475313438823/fc7ecf359cbe22136621707b56e5d278.webp?format=webp&width=1250&height=1250" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Slimeguard - The All-in-One Discord Bot" />
     <meta name="twitter:description" content="Manage, entertain, and grow your Discord community with Slimeguard's powerful features." />
-    <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.png" />
+    <meta name="twitter:image" content="https://images-ext-1.discordapp.net/external/xQUti7JsJEGgjx6FY0pzhazDE4GgOa3Xz_CAU1OSxHg/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1323513475313438823/fc7ecf359cbe22136621707b56e5d278.webp?format=webp&width=1250&height=1250" />
 
     <!-- Optional: Keywords -->
     <meta name="keywords" content="Discord, Bot, Moderation, Fun, Music, Giveaways, Economy, Slimeguard" />
@@ -39,5 +39,39 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+  // Disable right-click anywhere on the page
+  document.addEventListener('contextmenu', function(e) {
+    // Optional: allow right-click on links
+    // if (e.target.tagName.toLowerCase() === 'a') return;
+
+    // Disable right-click everywhere
+    e.preventDefault();
+  });
+
+  // Disable common shortcuts for viewing source / dev tools
+  document.addEventListener('keydown', function(e) {
+    // F12
+    if (e.key === "F12") {
+      e.preventDefault();
+    }
+    // Ctrl+U
+    if (e.ctrlKey && e.key === 'u') {
+      e.preventDefault();
+    }
+    // Ctrl+Shift+I (DevTools)
+    if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+      e.preventDefault();
+    }
+    // Ctrl+Shift+C (Element picker)
+    if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+      e.preventDefault();
+    }
+    // Ctrl+Shift+J (Console)
+    if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+      e.preventDefault();
+    }
+  });
+</script>
   </body>
 </html>
