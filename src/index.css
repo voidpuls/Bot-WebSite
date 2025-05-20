@@ -4,78 +4,91 @@
 
 @layer base {
   body {
-    @apply bg-[#1B2A34] text-[#A8CE78]; /* Dark background and green text */
+    @apply bg-[#0D1B2A] text-[#A8CE78]; /* Dark deep blue with slime-green text */
     font-family: 'Courier New', Courier, monospace; /* Terminal style font */
   }
 }
 
+/* Background with slimy, gooey texture or organic pattern */
 .bg-mesh {
-  background: url('your-background-image-path.jpg') no-repeat center center fixed; /* Add a cool nuclear texture as a background image */
+  background: url('your-slimy-background-image.jpg') no-repeat center center fixed; 
   background-size: cover;
   position: relative;
 }
 
+/* Glass panels look like slimy, translucent membranes */
 .glass {
-  @apply bg-[#2D3E49]/70 backdrop-blur-md border border-green-500 shadow-lg transition-all duration-300; /* Green glass border */
+  @apply bg-[#2D3E49]/70 backdrop-blur-md border border-[#4CAF50] shadow-lg transition-all duration-300;
+  /* Greenish border for slime effect */
 }
 
+/* Command highlight with a glowing, gooey effect */
 .highlight-command {
-  animation: highlight 2s ease-out forwards; /* Highlight animation for commands */
+  animation: highlight 2s ease-out forwards;
 }
 
 @keyframes highlight {
-  0% { background-color: rgba(168, 206, 120, 0.3); }
+  0% { background-color: rgba(138, 255, 146, 0.3); } /* Bright slime green */
   100% { background-color: transparent; }
 }
 
+/* Placeholder with a slimy hue */
 input::placeholder {
-  @apply text-green-300; /* Placeholder color */
+  @apply text-[#90EE90]; /* Light green for slime glow */
 }
 
-/* Button Styles */
+/* Primary button with a vibrant, slimy gradient */
 .btn-primary {
-  @apply bg-gradient-to-r from-green-500 to-green-600 
-         hover:from-green-600 hover:to-green-700 
-         text-black font-bold px-6 py-3 rounded-lg transition-all duration-200 
-         hover:shadow-2xl hover:shadow-green-500/50; /* Bright button colors */
+  @apply bg-gradient-to-r from-[#58D68D] to-[#45B39D]
+         hover:from-[#52BE80] hover:to-[#3498DB]
+         text-black font-bold px-6 py-3 rounded-lg transition-all duration-200
+         hover:shadow-2xl hover:shadow-[#58D68D]/50;
+  /* Gradient mimicking slimy surface */
 }
 
+/* Button hover glow */
 .button:hover {
-  @apply bg-green-500/10;
+  @apply bg-[#58D68D]/10;
 }
 
-/* Card Styles */
+/* Card titles with a bio-organic font size */
 .card-title {
-  font-size: 1.25rem; /* Card title font size */
+  @apply text-[#A8CE78] text-xl mb-4; /* Greenish headings */
 }
 
+/* Card descriptions */
 .card-description {
-  font-size: 0.875rem; /* Card description font size */
+  @apply text-[#C0C0C0] text-sm; /* Slightly muted for contrast */
 }
 
+/* Slimy, gooey card style with a translucent, organic border */
 .pip-card {
-  @apply glass p-4 my-4 rounded-lg border border-green-400/60 transition-all duration-300 hover:bg-[#2C3E50]/50; /* Specific Pip-Boy cards */
+  @apply bg-[#1A2A33]/70 p-4 my-4 rounded-lg border border-[#4CAF50]/60 transition-all duration-300 hover:bg-[#0D1B2A]/80;
+  /* Looks like a slimy membrane */
 }
 
+/* Spinning slime blob loader */
 .loading-spinner {
-  @apply animate-spin h-8 w-8 text-yellow-500; /* Loading spinner styling */
+  @apply animate-spin h-8 w-8 text-[#58D68D]; /* Greenish spinning loader */
 }
 
-/* Terminal-style animations */
+/* Float animation for floating slime particles or blobs */
 @keyframes float {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
+  50% { transform: translateY(-8px); }
   100% { transform: translateY(0); }
 }
 
 .float {
-  animation: float 5s ease-in-out infinite; /* Float animation */
+  animation: float 5s ease-in-out infinite;
 }
 
+/* Headings with a glowing, alien slime effect */
 h1, h2, h3 {
-  @apply text-yellow-300 mb-4; /* Yellow headings */
+  @apply text-[#7CFC00] mb-4; /* Bright, alien green */
 }
 
+/* Paragraphs with a muted, organic tone */
 p {
-  @apply text-gray-200; /* Soft p color */
+  @apply text-[#A0A0A0]; /* Muted gray, like slime residue */
 }
